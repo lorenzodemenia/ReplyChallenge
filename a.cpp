@@ -75,12 +75,13 @@ vector<int> parse_elem_int(vector<string> filename, int row = 0){
     return res;
 }
 
-vector<string> parse(string filename =  "/Users/leonardotibasco/Downloads/04-the-desert-of-autonomous-machines.txt"){
+vector<string> parse(string filename =  "/Users/leonardotibasco/Downloads/05-androids-armageddon.txt"){
     std::ifstream read(filename);
     string row;
     std::vector<string> parsed;
     if(read.is_open()){
         while(getline(read,row)){
+            row.pop_back();
             parsed.push_back(row);
         }
     }
