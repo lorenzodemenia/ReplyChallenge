@@ -68,7 +68,15 @@ vector<int> parse_elem(vector<string> filename, int row = 0){
     return res;
 }
 
-void parse(string filename = "path dove vi scarica il file"){
-
+vector<string> parse(string filename = "path dove vi scarica il file"){
+    std::ifstream read(filename);
+    string row;
+    std::vector<string> parsed;
+    if(read.is_open()){
+        while(getline(read,row, "\n")){
+            parsed.push_back(row);
+        }
+    }
+    return parsed
 }
 
