@@ -1,3 +1,0 @@
-/Users/leonardotibasco/Desktop/Reply/cmake-build-debug/CMakeFiles/Reply.dir
-/Users/leonardotibasco/Desktop/Reply/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/leonardotibasco/Desktop/Reply/cmake-build-debug/CMakeFiles/rebuild_cache.dir
