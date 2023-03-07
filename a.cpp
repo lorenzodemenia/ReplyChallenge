@@ -44,6 +44,12 @@ string i2s(T x) {
     return o.str();
 }
 
+std::ifstream::pos_type filesize(string filename)
+{
+    std::ifstream in(filename, std::ifstream::ate | std::ifstream::binary);
+    return in.tellg();
+}
+
 vector<string> split_string(string s, char c = ' ') {
     vector<string> all;
     int start = 0, i;
@@ -58,15 +64,11 @@ vector<string> split_string(string s, char c = ' ') {
     return all;
 }
 vector<string> parse_elem_string(vector<string> filename, int row = 0){
-    vector<string> val = split_string(filename.at(row));
-    vector<string> res;
-    REP(i,val.size()){
-        res.push_back(val.at(i));
-    }
-    return res;
+    return split_string(filename.at(row));
 }
 
 vector<int> parse_elem_int(vector<string> filename, int row = 0){
+
     vector<string> val = split_string(filename.at(row));
     vector<int> res;
     REP(i,val.size()){
@@ -92,5 +94,6 @@ vector<string> parse(string filename =  "/Users/leonardotibasco/Downloads/05-and
 
 int main(){
     std::vector<string> res = parse();
+    std::vector<string> val = parse_elem_string(res,1);
 }
 
