@@ -57,10 +57,17 @@ vector<string> split_string(string s, char c = ' ') {
 
     return all;
 }
-
-vector<int> parse_elem(vector<string> filename, int row = 0){
+vector<string> parse_elem_string(vector<string> filename, int row = 0){
     vector<string> val = split_string(filename.at(row));
-    string temp;
+    vector<string> res;
+    REP(i,val.size()){
+        res.push_back(val.at(i));
+    }
+    return res;
+}
+
+vector<int> parse_elem_int(vector<string> filename, int row = 0){
+    vector<string> val = split_string(filename.at(row));
     vector<int> res;
     REP(i,val.size()){
         res.push_back(stoi(val.at(i)));
@@ -68,15 +75,21 @@ vector<int> parse_elem(vector<string> filename, int row = 0){
     return res;
 }
 
-vector<string> parse(string filename = "path dove vi scarica il file"){
+vector<string> parse(string filename =  "/Users/leonardotibasco/Downloads/04-the-desert-of-autonomous-machines.txt"){
     std::ifstream read(filename);
     string row;
     std::vector<string> parsed;
     if(read.is_open()){
-        while(getline(read,row, "\n")){
+        while(getline(read,row)){
             parsed.push_back(row);
         }
     }
-    return parsed
+    return parsed;
+}
+
+
+
+int main(){
+    std::vector<string> res = parse();
 }
 
